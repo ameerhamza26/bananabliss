@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 75% 97%;
+    --foreground: 30 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 25% 25%;
+
+    --primary: 30 60% 35%;
+    --primary-foreground: 20 75% 97%;
+
+    --secondary: 60 60% 50%;
+    --secondary-foreground: 30 25% 25%;
+
+    --muted: 20 15% 90%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 120 40% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 80%;
+    --input: 30 15% 80%;
+    --ring: 30 60% 35%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 25% 10%;
+    --foreground: 20 15% 90%;
+
+    --card: 30 25% 15%;
+    --card-foreground: 20 15% 90%;
+
+    --popover: 30 25% 15%;
+    --popover-foreground: 20 15% 90%;
+
+    --primary: 30 60% 45%;
+    --primary-foreground: 20 15% 90%;
+
+    --secondary: 60 40% 30%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 30 25% 25%;
+    --muted-foreground: 30 10% 70%;
+
+    --accent: 120 25% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 25% 30%;
+    --input: 30 25% 30%;
+    --ring: 30 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-brand-brown;
+  }
+}
+
+@layer components {
+  .product-card {
+    @apply bg-white/80 rounded-lg p-6 shadow-md hover:shadow-lg transition-all;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl text-center mb-10 font-bold text-brand-brown border-b-2 border-brand-orange pb-3 inline-block;
+  }
+  
+  .benefit-list {
+    @apply list-disc list-inside text-left space-y-1 mb-4;
+  }
+  
+  .section-heading {
+    @apply text-2xl md:text-3xl font-bold text-center text-brand-brown mb-6;
+  }
+  
+  .subsection-heading {
+    @apply text-xl md:text-2xl font-bold text-center text-brand-brown mb-5;
+  }
+}
