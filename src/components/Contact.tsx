@@ -4,26 +4,42 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for contacting us. We'll get back to you soon.",
+    // Replace these with your actual EmailJS credentials
+    const publicKey = "hpVtxAE2fXmkyBM8K";
+    const serviceId = "service_6hxzl4c";
+    const templateId = "template_zyjvfbv";
+    
+    emailjs.sendForm(serviceId, templateId, e.currentTarget, publicKey)
+      .then((result) => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for contacting us. We'll get back to you soon.",
+        });
+        formRef.current?.reset();
+      })
+      .catch((error) => {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+          variant: "destructive",
+        });
+        console.error("EmailJS Error:", error);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      // Reset form
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
   };
   
   return (
@@ -82,40 +98,41 @@ const Contact = () => {
             <div className="bg-white rounded-lg shadow-md p-6">
               <h3 className="text-xl md:text-2xl font-bold mb-6 text-brand-brown text-center">Send Us A Message</h3>
               
-              <form onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Label htmlFor="user_name">Name</Label>
+                    <Input id="user_name" name="user_name" placeholder="Your name" required />
                   </div>
                   
                   <div>
-                    <Label htmlFor="company">Company</Label>
-                    <Input id="company" placeholder="Your company" />
+                    <Label htmlFor="user_company">Company</Label>
+                    <Input id="user_company" name="user_company" placeholder="Your company" />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Your email" required />
+                    <Label htmlFor="user_email">Email</Label>
+                    <Input id="user_email" name="user_email" type="email" placeholder="Your email" required />
                   </div>
                   
                   <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" placeholder="Your phone" />
+                    <Label htmlFor="user_phone">Phone</Label>
+                    <Input id="user_phone" name="user_phone" placeholder="Your phone" />
                   </div>
                 </div>
                 
                 <div className="mb-4">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Message subject" required />
+                  <Input id="subject" name="subject" placeholder="Message subject" required />
                 </div>
                 
                 <div className="mb-6">
                   <Label htmlFor="message">Message</Label>
                   <Textarea 
                     id="message" 
+                    name="message" 
                     placeholder="Tell us about your inquiry or requirements" 
                     className="min-h-[120px]"
                     required
