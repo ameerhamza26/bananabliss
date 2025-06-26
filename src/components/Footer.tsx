@@ -20,8 +20,8 @@ const Footer = () => {
           <div className="flex flex-col space-y-2">
             <div className="flex items-center">
               <Mail size={18} className="mr-2 text-brand-brown" />
-              <a href="mailto:info@bananablissco.com" className="text-brand-brown hover:text-brand-orange">
-                info@bananablissco.com
+              <a href="mailto:info@bananabliss.com" className="text-brand-brown hover:text-brand-orange">
+                info@bananabliss.com
               </a>
             </div>
             <div className="flex items-center">

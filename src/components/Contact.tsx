@@ -62,8 +62,8 @@ const Contact = () => {
                 <Mail className="mr-3 text-brand-orange flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-brand-brown">Email</h4>
-                  <a href="mailto:info@bananablissco.com" className="text-gray-700 hover:text-brand-orange">
-                    info@bananablissco.com
+                  <a href="mailto:info@bananabliss.com" className="text-gray-700 hover:text-brand-orange">
+                    info@bananabliss.com
                   </a>
                 </div>
               </div>
