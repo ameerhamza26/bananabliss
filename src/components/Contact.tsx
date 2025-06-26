@@ -119,8 +119,8 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <Label htmlFor="user_phone">Phone</Label>
-                    <Input id="user_phone" name="user_phone" placeholder="Your phone" />
+                    <Label htmlFor="contact">Phone</Label>
+                    <Input id="contact" name="contact" placeholder="Your phone" />
                   </div>
                 </div>
                 
