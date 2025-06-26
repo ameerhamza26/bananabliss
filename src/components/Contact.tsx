@@ -23,6 +23,7 @@ const Contact = () => {
     
     emailjs.sendForm(serviceId, templateId, e.currentTarget, publicKey)
       .then((result) => {
+        console.log(result)
         toast({
           title: "Message sent!",
           description: "Thank you for contacting us. We'll get back to you soon.",
