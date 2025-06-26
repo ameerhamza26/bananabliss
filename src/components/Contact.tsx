@@ -102,8 +102,8 @@ const Contact = () => {
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <Label htmlFor="user_name">Name</Label>
-                    <Input id="user_name" name="user_name" placeholder="Your name" required />
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" placeholder="Your name" required />
                   </div>
                   
                   <div>
@@ -114,8 +114,8 @@ const Contact = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <Label htmlFor="user_email">Email</Label>
-                    <Input id="user_email" name="user_email" type="email" placeholder="Your email" required />
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" name="email" type="email" placeholder="Your email" required />
                   </div>
                   
                   <div>
