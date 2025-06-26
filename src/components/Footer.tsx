@@ -26,12 +26,12 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               <MapPin size={18} className="mr-2 text-brand-brown" />
-              <span className="text-brand-brown">Your Location</span>
+              <span className="text-brand-brown">Karachi, Pakistan</span>
             </div>
             <div className="flex items-center">
               <Phone size={18} className="mr-2 text-brand-brown" />
               <a href="tel:+92000000000" className="text-brand-brown hover:text-brand-orange">
-                +92-000-0000000
+                +92-342-1971047
               </a>
             </div>
           </div>

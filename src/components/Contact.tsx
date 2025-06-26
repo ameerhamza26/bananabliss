@@ -73,7 +73,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-brand-brown">Phone</h4>
                   <a href="tel:+92000000000" className="text-gray-700 hover:text-brand-orange">
-                    +92-000-0000000
+                    +92-342-1971047
                   </a>
                 </div>
               </div>
@@ -82,7 +82,7 @@ const Contact = () => {
                 <MapPin className="mr-3 text-brand-orange flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-brand-brown">Location</h4>
-                  <p className="text-gray-700">Your Location</p>
+                  <p className="text-gray-700">Karachi, Pakistan</p>
                 </div>
               </div>
             </div>
