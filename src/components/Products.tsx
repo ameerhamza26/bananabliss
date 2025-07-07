@@ -125,6 +125,28 @@ const Products = () => {
       ],
       color: "green-700",
     },
+    {
+      title: "Egg Shell Powder",
+      image: "/lovable-uploads/egg-shell-powder.png",
+      icon: "🥚",
+      benefits: [
+        "Excellent natural source of calcium for bone health",
+        "Supports dental health and enamel strength",
+        "Can be added to pet or garden supplements",
+      ],
+      color: "gray-400",
+    },
+    {
+      title: "Onion Powder",
+      image: "/lovable-uploads/onion-powder.png",
+      icon: "🧅",
+      benefits: [
+        "Contains antioxidants that support immune function",
+        "Natural flavor enhancer for savory dishes",
+        "Supports heart health with beneficial sulfur compounds",
+      ],
+      color: "yellow-700",
+    },
   ];
 
   return (
